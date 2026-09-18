@@ -16,14 +16,16 @@ A foto fornecida está em `dist/mariana.jpg`. A identificação atual é Mariana
 
 A configuração de hospedagem privada de revisão está em `.openai/hosting.json`. O site precisa ter o acesso público habilitado antes de ser divulgado aos pacientes.
 
-## Cloudflare Pages
+## Cloudflare Workers
 
-Conecte o repositório `faustoho/sitemariana` em Workers & Pages > Create application > Pages > Import an existing Git repository.
+O projeto usa Workers Static Assets, sem código de servidor. Conecte o repositório `faustoho/sitemariana` no Cloudflare Workers.
 
 - Production branch: `main`
-- Framework preset: `None`
-- Build command: `exit 0`
-- Build output directory: `dist`
+- Build command: deixe vazio (ou `exit 0`)
+- Deploy command: `npx wrangler deploy`
 - Root directory: raiz do repositório
+- Nome do Worker: `sitemariana`
 
-A integração Git publica novamente quando a branch `main` recebe alterações. O formulário continua abrindo o WhatsApp e depende de confirmação manual. A configuração do Cloudflare está em `wrangler.jsonc`.
+O arquivo `wrangler.jsonc` aponta `assets.directory` para `./dist`. O site já está pronto nessa pasta e não precisa de compilação. O Cloudflare publica novamente quando a branch `main` recebe alterações. O formulário abre o WhatsApp e depende de confirmação manual.
+
+Para verificar a configuração sem publicar: `npx wrangler deploy --dry-run`.

@@ -1,6 +1,8 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
+  "$schema": "https://unpkg.com/wrangler@4/config-schema.json",
   "name": "sitemariana",
-  "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-09-18"
+  "compatibility_date": "2026-09-18",
+  "assets": {
+    "directory": "./dist"
+  }
 }
