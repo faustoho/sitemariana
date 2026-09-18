@@ -1,0 +1,1 @@
+window.SITE_CONFIG = { bookingUrl: "", whatsapp: "5541988760339", email: "", professionalName: "Mariana Franco Ribeiro de Oliveira", crm: "CRM-PR 26.519", rqe: "" };
