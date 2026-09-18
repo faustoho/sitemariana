@@ -1,3 +1,6 @@
 .site-package/
 site-review.tar.gz
 .sites-runtime/
+
+.wrangler/
+node_modules/

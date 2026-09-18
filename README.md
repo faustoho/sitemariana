@@ -15,3 +15,15 @@ A foto fornecida está em `dist/mariana.jpg`. A identificação atual é Mariana
 ## Publicação
 
 A configuração de hospedagem privada de revisão está em `.openai/hosting.json`. O site precisa ter o acesso público habilitado antes de ser divulgado aos pacientes.
+
+## Cloudflare Pages
+
+Conecte o repositório `faustoho/sitemariana` em Workers & Pages > Create application > Pages > Import an existing Git repository.
+
+- Production branch: `main`
+- Framework preset: `None`
+- Build command: `exit 0`
+- Build output directory: `dist`
+- Root directory: raiz do repositório
+
+A integração Git publica novamente quando a branch `main` recebe alterações. O formulário continua abrindo o WhatsApp e depende de confirmação manual. A configuração do Cloudflare está em `wrangler.jsonc`.
